@@ -180,8 +180,7 @@ class _CreatePageState extends State<CreatePage> {
                     children: [
                       ..._skillControllers.map(
                         (controller) => Container(
-                          width: 80,
-                          height: 40,
+                          width: 90,
                           decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.all(Radius.circular(50)),
@@ -230,13 +229,16 @@ class _CreatePageState extends State<CreatePage> {
                               ),
                             ],
                           ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(FontAwesomeIcons.plus, size: 16),
-                              SizedBox(width: 5),
-                              Text('Skill'),
-                            ],
+                          child: Padding(
+                            padding: const EdgeInsets.all(4),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(FontAwesomeIcons.plus, size: 16),
+                                SizedBox(width: 5),
+                                Text('Skill'),
+                              ],
+                            ),
                           ),
                         ),
                       ),
