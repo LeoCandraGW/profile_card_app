@@ -68,7 +68,7 @@ class _ListProfileState extends State<ListProfile> {
                       return ProfileContainer(
                         profiles: profiles,
                         qrItem: qrItem,
-                        rating: qrItem?['ratings'] ?? 0.0,
+                        rating: qrItem['ratings'] ?? 0.0,
                         onSubmit: (submited) async {
                           await _loadList();
                         },
