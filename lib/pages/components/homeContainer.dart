@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:profile_card/datas/profile.dart';
+import 'package:profile_card/datas/rating.dart';
 import 'package:profile_card/datas/skill.dart';
 import 'package:profile_card/static/base64image.dart';
 import 'package:simple_barcode_scanner/simple_barcode_scanner.dart';
@@ -59,6 +60,8 @@ class HomeContainer extends StatelessWidget {
             for (var skill in decoded['skills']) {
               await Skill.instance.createSkill(profileId, skill['name']);
             }
+
+            await Rating.instance.insertRating(profileId, decoded['ratings']);
 
             Navigator.pushNamed(context, navigate, arguments: profileId);
           } catch (e) {
